@@ -17,11 +17,10 @@ def compute_add_flops(layer, macs = False):
     return 0
 def compute_flatten(layer, macs = False):
     return 0
-def compute_conv2d_flops(layer, macs = False):
+def compute_conv1d_flops(layer, macs = False):
     return 0
 
-def compute_conv1d_flops(layer, macs = False):
-    
+def compute_conv2d_flops(layer, macs = False):
 #     _, cin, h, w = input_shape
     if layer.data_format == "channels_first":
         _, input_channels, _, _ = layer.input_shape
