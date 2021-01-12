@@ -19,6 +19,8 @@ def compute_flatten(layer, macs = False):
     return 0
 def compute_conv1d_flops(layer, macs = False):
     return 0
+def compute_dropout(layer, macs = False):
+    return 0
 
 def compute_conv2d_flops(layer, macs = False):
 #     _, cin, h, w = input_shape
