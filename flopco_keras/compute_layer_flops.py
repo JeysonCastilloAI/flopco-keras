@@ -20,7 +20,7 @@ def compute_flatten(layer, macs = False):
 def compute_conv2d_flops(layer, macs = False):
     return 0
 
-def compute_conv2d_flops(layer, macs = False):
+def compute_conv1d_flops(layer, macs = False):
     
 #     _, cin, h, w = input_shape
     if layer.data_format == "channels_first":
