@@ -15,6 +15,10 @@ def compute_tfop_flops(layer, macs = False):
     return 0
 def compute_add_flops(layer, macs = False):
     return 0
+def compute_flatten(layer, macs = False):
+    return 0
+def compute_conv2d_flops(layer, macs = False):
+    return 0
 
 def compute_conv2d_flops(layer, macs = False):
     
@@ -73,6 +77,14 @@ def compute_maxpool2d_flops(layer, macs = False):
     flops = 0
     if not macs:
         flops = layer.pool_size[0]**2 * numel(layer.output_shape[1:])
+
+    return flops
+
+def compute_maxpool1d_flops(layer, macs = False):
+
+    flops = 0
+    if not macs:
+        flops = layer.pool_size[0]*2 * numel(layer.output_shape[1:])
 
     return flops
 

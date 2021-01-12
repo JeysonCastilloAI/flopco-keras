@@ -25,13 +25,16 @@ class FlopCoKeras():
                     'ReLU': compute_relu_flops,
                     'InputLayer': compute_input_flops,
                     'Conv2D': compute_conv2d_flops,
+                    'Conv1D': compute_conv1d_flops,
                     'ZeroPadding2D': compute_padding_flops,
                     'Activation': compute_activation_flops,
                     'Dense': compute_fc_flops,
                     'BatchNormalization': compute_bn2d_flops,
                     'TensorFlowOpLayer': compute_tfop_flops,
                     'MaxPooling2D': compute_pool2d_flops,
+                    'MaxPooling1D': compute_maxpool1d_flops,
                     'Add': compute_add_flops,
+                    'Flatten': compute_flatten,
                     'GlobalAveragePooling2D': compute_globalavgpool2d_flops}
 
         
