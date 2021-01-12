@@ -36,6 +36,7 @@ class FlopCoKeras():
                     'Add': compute_add_flops,
                     'Flatten': compute_flatten,
                     'Dropout': compute_dropout,
+                    'TFOpLambda': compute_TFOpLambda,
                     'GlobalAveragePooling2D': compute_globalavgpool2d_flops}
 
         
