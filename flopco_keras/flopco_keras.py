@@ -35,6 +35,7 @@ class FlopCoKeras():
                     'MaxPooling1D': compute_maxpool1d_flops,
                     'Add': compute_add_flops,
                     'Flatten': compute_flatten,
+                    'Dropout': compute_dropout,
                     'GlobalAveragePooling2D': compute_globalavgpool2d_flops}
 
         
