@@ -7,6 +7,8 @@ def numel(w : list):
 
 def compute_input_flops(layer, macs = False):
     return 0
+def compute_TFOpLambda(layer, macs = False):
+    return 0
 def compute_padding_flops(layer, macs = False):
     return 0
 def compute_activation_flops(layer, macs = False):
