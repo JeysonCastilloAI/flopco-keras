@@ -33,7 +33,7 @@ def compute_conv1d_flops(layer, macs = False):
 
     if not macs:
         if layer.use_bias is not None:
-            flops_bias = numel(layer.output_shape[1:])
+            flops_bias = layer.output_shape[1]*layer.output_shape[2]
         elif layer.use_bias is None:
             flops_bias = 0
         flops = 2 * flops + flops_bias
