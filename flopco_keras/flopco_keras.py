@@ -23,7 +23,7 @@ class FlopCoKeras():
         self.macs = []
         self.get_flops = {
                     'ReLU': compute_relu_flops,
-                    'InputLayer': compute_input_flops,
+                    'InputLayer': compute_zeroflops,
                     'Conv2D': compute_conv2d_flops,
                     'Conv1D': compute_conv1d_flops,
                     'ZeroPadding2D': compute_padding_flops,
@@ -34,9 +34,9 @@ class FlopCoKeras():
                     'MaxPooling2D': compute_pool2d_flops,
                     'MaxPooling1D': compute_maxpool1d_flops,
                     'Add': compute_add_flops,
-                    'Flatten': compute_flatten,
-                    'Dropout': compute_dropout,
-                    'TFOpLambda': compute_TFOpLambda,
+                    'Flatten': compute_zeroflops,
+                    'Dropout': compute_zeroflops,
+                    'TFOpLambda': compute_zeroflops,
                     'GlobalAveragePooling2D': compute_globalavgpool2d_flops}
 
         
