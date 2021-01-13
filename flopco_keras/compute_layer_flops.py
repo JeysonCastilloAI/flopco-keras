@@ -27,9 +27,9 @@ def compute_conv1d_flops(layer, macs = False):
         _, _, input_channels = layer.input_shape
         _, w, output_channels = layer.output_shape
     
-    w_w =  layer.kernel_size
+    w_w =  layer.kernel_size[0]
     
-    flops = w * output_channels * input_channels * int(w_w)
+    flops = w * output_channels * input_channels * w_w
     
     if not macs:
         if layer.use_bias == True:
