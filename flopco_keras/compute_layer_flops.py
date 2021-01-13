@@ -37,7 +37,7 @@ def compute_conv1d_flops(layer, macs = False):
         elif layer.use_bias is None:
             flops_bias = 0
         type(flops_bias)
-        flops = 2 * flops + flops_bias
+        flops = 2 * flops + int(flops_bias)
         
     return int(flops)
 def compute_zeroflops(layer, macs = False):
