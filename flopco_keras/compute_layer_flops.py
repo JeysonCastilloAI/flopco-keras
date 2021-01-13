@@ -27,7 +27,7 @@ def compute_conv1d_flops(layer, macs = False):
         _, _, input_channels = layer.input_shape
         _, w, output_channels = layer.output_shape
     
-    w_w,_ =  layer.kernel_size
+    w_w =  layer.kernel_size
     
     flops = int(w) * int(output_channels) * int(input_channels) * int(w_w)
     
