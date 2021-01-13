@@ -20,8 +20,23 @@ def compute_add_flops(layer, macs = False):
 def compute_flatten(layer, macs = False):
     return 0
 def compute_conv1d_flops(layer, macs = False):
-    return 0
-def compute_dropout(layer, macs = False):
+    if layer.data_format == "channels_first":
+        _, input_channels, _, = layer.input_shape
+        _, output_channels, w, = layer.output_shape
+    elif layer.data_format == "channels_last":
+        _, _, input_channels = layer.input_shape
+        _, w, output_channels = layer.output_shape
+    
+    w_w =  layer.kernel_size
+    
+    flops = w * output_channels * input_channels * w_w
+
+    if not macs:
+        flops_bias = numel(layer.output_shape[1:]) if layer.use_bias is not None else 0
+        flops = 2 * flops + flops_bias
+        
+    return int(flops)
+def compute_zeroflops(layer, macs = False):
     return 0
 
 def compute_conv2d_flops(layer, macs = False):
