@@ -3,7 +3,7 @@ def numel(w : list):
     out = 1
     for k in w:
         out *= k
-    return out
+    return int(out)
 
 def compute_input_flops(layer, macs = False):
     return 0
