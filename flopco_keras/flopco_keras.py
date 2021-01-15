@@ -33,7 +33,7 @@ class FlopCoKeras():
                     'TensorFlowOpLayer': compute_tfop_flops,
                     'MaxPooling2D': compute_pool2d_flops,
                     'MaxPooling1D': compute_maxpool1d_flops,
-                    'Add': compute_add_flops,
+                    'Add': compute_relu_flops,
                     'Flatten': compute_zeroflops,
                     'Dropout': compute_zeroflops,
                     'TFOpLambda': compute_zeroflops,
