@@ -88,7 +88,7 @@ def compute_relu_flops(layer, macs = False):
     
     flops = 0
     if not macs:
-        flops = numel(layer.input_shape[1:])
+        flops = numel(layer.output_shape[1:])
 
     return int(flops)
 
